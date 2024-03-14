@@ -1,10 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './pages/home'
+import Dashboard from './pages/dashboard'
+import Onboarding from './pages/onboarding'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   return (
-    <div>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      {/* <Route/> self closing tag */}
+      <Route path = "/" element={<Home/>}/>
+      <Route path = "/dashboard" element={<Dashboard/>}/>
+      <Route path = "/onboarding" element={<Onboarding/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
