@@ -1,15 +1,19 @@
 import Nav from '../components/nav'
+import { useState } from 'react'
 
 const Home = () => {
-    const authToken = true
+    const [showModal, setShowModal] = useState(false)
+
+    const authToken = false
 
     const handleClick = () => {
         console.log('clicked')
+        setShowModal(true)
     }
     return (
         // wrap in two empty divs because jsx needs to be wrapped
-        <> 
-        <Nav/>
+        <div className='overlay'> 
+        <Nav minimal={false} authToken={authToken}/>
         <div  className = "home" >
             <h1> Swipe Right </h1>
             <button className="primary-button" onClick={handleClick}>
@@ -18,7 +22,7 @@ const Home = () => {
 
 
         </div>
-        </>
+        </div>
     )
 }
 export default Home
